@@ -111,7 +111,7 @@ Name your first project `Free Fall Detection`:
 
 The first step will be to acquire data, **the dataset**, for this we will use your smartphone sensors and for this particular use case, the accelerometer. 
 
-Your dataset will be split into the training set and the test set. We will use a rough **75/25** ratio between the training set and the testing set:
+Your dataset will be split into the training set and the test set. We will use a rough **80/20** ratio between the **training** set and the **testing** set:
 
 ![dataset](assets/dataset.png)
 
@@ -179,7 +179,22 @@ Here are the three types of data overview:
 
 ![labeled-data-3](assets/labeled-data-3.png)
 
-Time to work, get 15 `freefall` data, 15 `idle` data and 50 `unknown` data!
+Time to work! 
+
+* Get 15 `freefall` data, 15 `idle` data and 50 `unknown` Training data 
+* Get 4 `freefall` data, 4 `idle` data and 10 `unknown` Test data 
+
+![training-data](assets/training-data.png)
+
+![test-data](assets/test-data.png)
+
+Great, we have our dataset to start training our model!
+
+### Training our model
+
+We won't enter too much into details here as it could get too complicated.
+
+However, Edge Impulse have this incredible feature which pre-processes your data to generate features. Then, theses features will be passed to your Neural Network.
 
 
 
