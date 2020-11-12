@@ -1,20 +1,20 @@
 # Introduction to Embedded Machine Learning
 
-With [Edge Impusle](https://www.edgeimpulse.com/) and your smartphone (for the data collection & the inference parts)
+With [Edge Impulse](https://www.edgeimpulse.com/) and your smartphone (for the data collection & the inference parts)
 
-For this third lab, I wanted to show you device lifecycles concepts including: 
+For this third lab, we were supposed to see the devices lifecycles concepts including: 
 
 * What are makefiles
 * OTA (Over The Air) Firmware Upgrades 
 * How to manage a fleet of devices
 
-However due to the exceptional conditions during the lock-down, this lab will be done remotely. Without access to the microcontrolers, we will be doing an **introduction to Embedded Machine Learning using [Edge Impusle](https://www.edgeimpulse.com/) solution**.
+However due to the exceptional conditions during the lock-down, this lab will be done remotely. Indeed, without having access to the microcontrollers, we will instead be doing an **introduction to Embedded Machine Learning using [Edge Impulse](https://www.edgeimpulse.com/) solution** using your mobile phones' sensors to acquire data and to test our generated inference models.
 
 In this lab, we will see three different algorithms, matching different use cases:
 
 1. **Continuous motion detection**: We will use this technique to detect *free-fall patterns*. It could be integrated in an assistance solution for the elderly for example.
 2. **Image classification**: It's a famous technique to classify images, if you go further with neural networks, you will probably end up doing a tutorial to recognize a cat from a dog. Here I will give you freedom to classify any type of image, feel free to make something fun.
-3. **Trigger word detection**: "Hey Google" or "Alexa" words can trigger your smart speaker. here, we will try to recognize your own word.
+3. **Bonus (not graded): Trigger word detection**: "Hey Google" or "Alexa" words can trigger your smart speaker. here, we will try to recognize your own word.
 
 *Disclaimer: I am a beginner in AI & Deep Learning. This field got my attention recently and I only passed the Coursera [Neural Networks and Deep Learning Specification](https://www.coursera.org/account/accomplishments/verify/5WBR89U96WJ7) in April 2020. IoT has experienced, in recent years, a new craze boosted by AI (Artificial Intelligence), Blockchain and integration with SaaS applications. The real-time feedback of physical data, making it possible to constantly create new uses.*
  
@@ -89,13 +89,13 @@ There are some major advantages to deploying ML on embedded devices. The key adv
 
 ## Edge Impulse Overview
 
-🎙️ Interview of [Aurelien Lequertier](https://www.linkedin.com/in/alequertier/), Lead User Success Engineer at Edge Impulse:
+🎙️ Interview of [Aurelien Lequertier](https://www.linkedin.com/in/alequertier/), Lead User Success Engineer at Edge Impulse: 
 
-[![Interview Aurelien @ Edge Impulse](http://img.youtube.com/vi/qZk2DkBRneI/0.jpg)](http://www.youtube.com/watch?v=qZk2DkBRneI "Interview Aurelien @ Edge Impulse")
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qZk2DkBRneI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Create an account & a project
 
-Start by creating an account on [Edge Impusle](https://studio.edgeimpulse.com/signup):
+Start by creating an account on [Edge Impulse](https://studio.edgeimpulse.com/signup):
 
 ![signup](assets/signup.png)
 
@@ -149,7 +149,7 @@ Click on `Get Started!` you should see `1 Device(s) connected` on the right tab:
 
 ![device-connected](assets/device-connected.png)
 
-Jump the the `Data acquisition` tab:
+Jump to the `Data acquisition` tab:
 
 You will see on the upper left corner two tabs: `Training data` and `Test data`:
 
@@ -202,9 +202,7 @@ However, Edge Impulse have this incredible feature which pre-processes your data
 
 Navigate to the `Impulse design` menu tab and create an impulse:
 
-![create-impulse-1](assets/create-impulse-1.png)
-
-Replace the default parameters with Window increase: `215 ms`, then add a `Spectral Analysis` processing block:
+At first, we will leave the `default parameters` and see how it performs, then add a `Spectral Analysis` processing block:
 
 ![create-impulse-2](assets/create-impulse-2.png)
 
@@ -214,11 +212,71 @@ Add `Neural Network` learning block:
 
 You should have the following results:
 
-![create-impulse-4](assets/create-impulse-4.png)
+![create-impulse-4](assets/create-impulse-1.png)
 
+Now, go the the `Spectral features` tab, again we will leave the `default parameters`:
 
+![spectral-features](assets/spectral-features.png)
 
+Click on the `Generate features` head tab click on the `Generate features` button:
 
+![generate-features](assets/generate-features.png)
+
+![generate-features-3](assets/generate-features-3.png)
+
+We see on the 3D chart that the "features" are a bit messy, meaning we do not distinguish a simple pattern yet. In that case, we will try to change the parameters. Go back to the `Parameters` tab and try to change the `Filter` type from `low` to `high`. Save the parameters and generate again your features:
+
+![generate-features-2](assets/generate-features-2.png)
+
+It looks a bit cleaner, we start to identify some patterns!
+
+Now move to the `NN Classifier` in the left menu and leave the default parameters and click on `Start Training`:
+
+![NN-Classifier](assets/NN-Classifier.png)
+
+Not bad for a first try!
+
+![latest-training-performance](assets/latest-training-performance.png)
+
+Now we will try to test our model with values the model has not be trained with (our Testing Set). To do so, click on the `Model testing` menu item, select all the items and click on `Classify selected`:
+
+![model-testing](assets/model-testing.png)
+
+I've got 78.54% of accuracy. 
+
+Next we'll try to improve our NN Classifier accuracy and our Model Testing accuracy:
+
+By changing the following parameters:
+
+![improve-model-1](assets/improve-model-1.png)
+
+*By changing the windows, you will need to re-generate the Spectral features.*
+
+![improve-model-2](assets/improve-model-2.png)
+
+I managed to get a 98.2% in my training accuracy:
+
+![training-accuracy-2](assets/training-accuracy-2.png)
+
+And a 89.47% in my testing accuracy:
+
+![testing-accuracy-2](assets/testing-accuracy-2.png)
+
+For machine & deep learning algorithms to perform well, they usually need a large quantity of data. I've provided you some extra free-fall data (under `./datasets/free-fall-detection/additionnal`).
+To add them to your dataset, go to `Data acquisition`, you will see a banner ` Did you know? You can capture data from any device or development board, or upload your existing datasets - Show options
+×`. Click on show your options:
+
+![add-more-data](assets/add-more-data.png)
+
+![add-more-data-2](assets/add-more-data-2.png)
+
+And Train again your model under the `NN Classifier` menu item:
+
+![train-your-model-with-more-data](assets/train-your-model-with-more-data.png)
+
+See, just by adding more data, your model perform better. Let's test our model with the testing dataset:
+
+![test-your-model-with-more-data](assets/test-your-model-with-more-data.png)
 
 
 
