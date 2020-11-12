@@ -347,7 +347,7 @@ Feel free to have a look at those two tutorials if you are in trouble:
 * [Collecting image data with the OpenMV Cam H7 Plus](https://docs.edgeimpulse.com/docs/image-classification-openmv)
 * [Collecting image data with your mobile phone](https://docs.edgeimpulse.com/docs/image-classification-mobile-phone)
 
-*Just a quick explanation for you to understand Transfer Learning: Here we will be using the transfer learning technique with the MobileNetV2 0.35 neural network. Here, the model has already be pre-trained with 1.677M parameters. It means it has already learned to recognize some pattern in a picture such as edges, shapes, etc...
+*Just a quick explanation for you to understand Transfer Learning: Here we will be using the transfer learning technique with the MobileNetV2 0.35 neural network. Here, the model has already be pre-trained with 1.677M parameters, our data will be used for the last layers. It means it has already learned to recognize some pattern in a picture such as edges, shapes, etc...
 If you are interested in knowing more, here is an research paper written by Matthew D. Zeiler and Rob Fergus from the New York University on [Visualizing and Understanding Convolutional Networks](https://cs.nyu.edu/~fergus/papers/zeilerECCV2014.pdf). Let me just add one screenshot so you can understand what the network can learn from the network features:*
 
 Do not worry if you don't understand, it was just to give you an quick overview of what is transfer learning.
