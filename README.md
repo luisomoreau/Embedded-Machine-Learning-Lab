@@ -30,7 +30,17 @@ You won't need the past laboratory for this lab but here they are in case you we
 
 * Having a smartphone running on Android or iOS
 
+## Grades
+
 This lab will be graded and has to be done individually.
+
+Where you will see:
+
+✏️ Step X: For the graded part, take a screenshot, a picture or save your code
+
+Please, add the screenshot or your code under the /graded-assignement folder. Name your screenshot, your picture or your code folder with the step number. Example: graded-assignement/screenshots/step1.png
+
+
 
 ## What is Embedded Machine Learning
 
@@ -244,6 +254,15 @@ Now we will try to test our model with values the model has not be trained with 
 
 I've got 78.54% of accuracy. 
 
+✏️ **Step 1: For the graded part, take a screenshot of your model accuracy and your testing accuracy**
+
+✏️ **Step 2: For the graded part, export your dataset:**
+To do so, go in the `Dashboard` menu item, on the upper right corner you will see three tabs `Project info` | `Keys` | `Export`. Click on `Export` and copy your data in the `graded-assignement` folder:
+
+![export-data](assets/export-data.png)
+
+### Improving our model
+
 Next we'll try to improve our NN Classifier accuracy and our Model Testing accuracy:
 
 By changing the following parameters:
@@ -278,13 +297,36 @@ See, just by adding more data, your model perform better. Let's test our model w
 
 ![test-your-model-with-more-data](assets/test-your-model-with-more-data.png)
 
+Again, it is much better!
 
+Feel free to change the parameters to have the best performing model.
 
+✏️ **Step 3: For the graded part, take a screenshot of your model accuracy, of your testing accuracy and of the parameters you changed (under `Create impulse`, `Spectral features` or `NN Classifier`)**
 
+### Inference
 
+Inference definition:
+
+*Machine learning (ML) inference is the process of running live data points into a machine learning algorithm (or “ML model”) to calculate an output such as a single numerical score. This process is also referred to as “operationalizing an ML model” or “putting an ML model into production.” When an ML model is running in production, it is often then described as artificial intelligence (AI) since it is performing functions similar to human thinking and analysis. Machine learning inference basically entails deploying a software application into a production environment, as the ML model is typically just software code that implements a mathematical algorithm. That algorithm makes calculations based on the characteristics of the data, known as “features” in the ML vernacular.*
+
+Source: [https://hazelcast.com/glossary/machine-learning-inference/](https://hazelcast.com/glossary/machine-learning-inference/)
+
+For us to test the predictions, we will use our smartphones. Edge impulse made this step very easy. Go to the `Live classification` menu item:
+
+![live-classification](assets/live-classification.png)
+
+Select your phone and click on start sampling
+
+![live-classification-2](assets/live-classification-2.png)
+
+Then, to deploy your model, click on the `Deployment` menu item:
+
+![deployment](assets/deployment.png)
+
+Aurelien, already talked about this part in the video interview. If you own an Arduino board with an accelerometer, you can try it on it. Otherwise, just download the open-source C++ library or the WebAssembly to integrate your code in a Web App 🚀! 
 
 
 ## Image classification
 
 
-## Trigger word detection
+## Trigger word detection (optional)
