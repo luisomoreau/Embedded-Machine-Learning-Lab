@@ -1,0 +1,1 @@
+{"protected":{"ver":"v1","alg":"HS256","iat":1605220440},"signature":"2eee798c6dfc18642147453d2acc155546a00dba64a85302192de9457423bfa4","payload":{"device_name":"phone_khci7wpk","device_type":"MOBILE_CLIENT","interval_ms":0,"sensors":[{"name":"image","units":"rgba"}],"values":["Ref-BINARY-image/jpeg (40515 bytes) xyz"]}}

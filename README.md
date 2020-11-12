@@ -395,6 +395,26 @@ I guess is not that bad for this particular use case, let's see how our testing 
 
 ![ic-testing-model](assets/ic-testing-model.png)
 
+Well, it good but not excellent, let me try to adjust few parameters to get better results...
+
+**Optimizing models**:
+
+![ic-optimizing-training](assets/ic-optimizing-training.png)
+
+![ic-optimizing-test](assets/ic-optimizing-test.png)
+
+And in real life:
+
+![ic-detect-knife](assets/ic-detect-knife.jpg)
+
+If you want to reproduce this exact model training, my dataset is under:
+`./datasets/spoons-forks-knives/`
+
+✏️ **Step 4: For the graded part, take screenshots of your model accuracy, of your testing accuracy and of the parameters you added (under `Create impulse`, `Image` or `Transfer learning`)**
+
+✏️ **Step 2: For the graded part, export your dataset:**
+Copy your data in the `graded-assignement/image-classification` folder:
+
 
 
 
