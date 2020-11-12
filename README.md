@@ -184,6 +184,8 @@ Time to work!
 * Get 15 `freefall` data, 15 `idle` data and 50 `unknown` Training data 
 * Get 4 `freefall` data, 4 `idle` data and 10 `unknown` Test data 
 
+⚠️ Warning: For the free-fall data acquistion, do it above your bed or your sofa, I will not be hold responible if you break your phone! ;) 
+
 ![training-data](assets/training-data.png)
 
 ![test-data](assets/test-data.png)
@@ -195,6 +197,24 @@ Great, we have our dataset to start training our model!
 We won't enter too much into details here as it could get too complicated.
 
 However, Edge Impulse have this incredible feature which pre-processes your data to generate features. Then, theses features will be passed to your Neural Network.
+
+Navigate to the `Impulse design` menu tab and create an impulse:
+
+![create-impulse-1](assets/create-impulse-1.png)
+
+Replace the default parameters with Window increase: `215 ms`, then add a `Spectral Analysis` processing block:
+
+![create-impulse-2](assets/create-impulse-2.png)
+
+Add `Neural Network` learning block:
+
+![create-impulse-3](assets/create-impulse-3.png)
+
+You should have the following results:
+
+![create-impulse-4](assets/create-impulse-4.png)
+
+
 
 
 
