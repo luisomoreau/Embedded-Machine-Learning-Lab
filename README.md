@@ -14,7 +14,7 @@ In this lab, we will see three different algorithms, matching different use case
 
 1. **Continuous motion detection**: We will use this technique to detect *free-fall patterns*. It could be integrated in an assistance solution for the elderly for example.
 2. **Image classification**: It's a famous technique to classify images, if you go further with neural networks, you will probably end up doing a tutorial to recognize a cat from a dog. Here I will give you freedom to classify any type of image, feel free to make something fun.
-3. **Bonus (not graded): Trigger word detection**: "Hey Google" or "Alexa" words can trigger your smart speaker. here, we will try to recognize your own word.
+3. **Trigger word detection (bonus, not graded): **: "Hey Google" or "Alexa" words can trigger your smart speaker. here, we will try to recognize your own word.
 
 *Disclaimer: I am a beginner in AI & Deep Learning. This field got my attention recently and I only passed the Coursera [Neural Networks and Deep Learning Specification](https://www.coursera.org/account/accomplishments/verify/5WBR89U96WJ7) in April 2020. IoT has experienced, in recent years, a new craze boosted by AI (Artificial Intelligence), Blockchain and integration with SaaS applications. The real-time feedback of physical data, making it possible to constantly create new uses.*
  
@@ -38,7 +38,7 @@ Where you will see:
 
 ✏️ Step X: For the graded part, take a screenshot, a picture or save your code
 
-Please, add the screenshot or your code under the /graded-assignement folder. Name your screenshot, your picture or your code folder with the step number. Example: graded-assignement/screenshots/step1.png
+Please, add the screenshot or your code under the /graded-assignement folder. Name your screenshot, your picture or your code folder with the step number. Example: graded-assignement/step1/screenshot1.png
 
 
 
@@ -234,11 +234,11 @@ Click on the `Generate features` head tab click on the `Generate features` butto
 
 ![generate-features-3](assets/generate-features-3.png)
 
-We see on the 3D chart that the "features" are a bit messy, meaning we do not distinguish a simple pattern yet. In that case, we will try to change the parameters. Go back to the `Parameters` tab and try to change the `Filter` type from `low` to `high`. Save the parameters and generate again your features:
+We see on the 3D chart that the "features" are a bit messy, meaning we do not distinguish a simple pattern yet (we also often talk about cluster of data). In that case, we will try to change the parameters. Go back to the `Parameters` tab and try to change the `Filter` type from `low` to `high`. Save the parameters and generate again your features:
 
 ![generate-features-2](assets/generate-features-2.png)
 
-It looks a bit cleaner, we start to identify some patterns!
+It looks a bit cleaner, we start to identify some distinguish clusters!
 
 Now move to the `NN Classifier` in the left menu and leave the default parameters and click on `Start Training`:
 
@@ -325,8 +325,87 @@ Then, to deploy your model, click on the `Deployment` menu item:
 
 Aurelien, already talked about this part in the video interview. If you own an Arduino board with an accelerometer, you can try it on it. Otherwise, just download the open-source C++ library or the WebAssembly to integrate your code in a Web App 🚀! 
 
+Congrat's, that was quite a bit of a work! You finally got your first deep learning model trained with few data, tested it and ran it onto an embedded device 👏
+
+Before we move on, do not hesitate to have a break, have a KitKat 🥁🥁➡️🚪!
+
 
 ## Image classification
 
+Let's go for the second exercice. Try to recognize objects from your home (do not choose more than 5 categories of objects to classify for this exercice). I was lacking of inspiration tonight, I hope you will be more creative and fun ;).
+
+Here is the objects I want to classify:
+
+Spoon vs fork vs knives:
+
+![spoon-fork-knife](assets/spoon-fork-knife.jpg)
+
+This exercice won't be as detailed as the previous one as you now have most of the keys to success.
+
+Feel free to have a look at those two tutorials if you are in trouble:
+
+* [Collecting image data with the OpenMV Cam H7 Plus](https://docs.edgeimpulse.com/docs/image-classification-openmv)
+* [Collecting image data with your mobile phone](https://docs.edgeimpulse.com/docs/image-classification-mobile-phone)
+
+I will detail the steps I have been following to train my image classification model.
+
+I have been using 50 images of each class + 50 unknown (~50 forks, ~50 spoons, ~50 knives and ~75 unknown), split automatically (80/20) between training and test sets:
+
+
+
+**Create a new project:**
+
+![ic-create-project](assets/ic-create-project.png)
+
+**Add a device.**
+
+**Data acquisition:**
+
+Choose a label for your data (in my case `fork`), and choose the `Camera` sensor:
+
+![ic-labels](assets/ic-labels.png)
+
+Check your phone, click on `Collecting images?`, authorize access, give your phone a label to classify and choose `split automatically 80/20`
+
+![ic-phone](assets/ic-phone.png)
+
+After some time, I got the following results:
+
+![ic-training](assets/ic-training.png)
+
+![ic-testing](assets/ic-testing.png)
+
+**Create an impulse**:
+
+![ic-create-impulse](assets/create-impulse.png)
+
+**Generate features**:
+
+After I generated the features... I bet this model will be tricky to train as I detect no cluster well identified:
+
+![ic-input-features](assets/ic-input-features.png)
+
+**Generating model**:
+
+![ic-generating-model](assets/ic-generating-model.png)
+
+I guess is not that bad for this particular use case, let's see how our testing data perform with this model:
+
+**Model testing**:
+
+![ic-testing-model](assets/ic-testing-model.png)
+
+
+
 
 ## Trigger word detection (optional)
+
+We have seen quite a lot today, this exercice is completely optional. What we have seen together today is a great introduction to embedded machine learning. If you want to go deeper in neural networks, I took the [Neural Networks and Deep Learning Specialization on Coursera](https://www.coursera.org/learn/neural-networks-deep-learning) and I learnt a lot. Theses qualifications are a real added value on a resume, so if you liked this lab, go ahead and learn more!
+
+Now, Edge Impulse has also amazing tutorials to go further and to easily learn by yourself. Here are two tutorials that you should be able to reproduce by now (by slightly adapting the documentation):
+
+Step 1: [Recognize sound from audio](https://docs.edgeimpulse.com/docs/audio-classification)
+
+Step 2: [Continuous audio sampling](https://docs.edgeimpulse.com/docs/continuous-audio-sampling)
+
+Before you leave, 
