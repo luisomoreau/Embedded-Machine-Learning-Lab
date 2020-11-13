@@ -101,7 +101,7 @@ There are some major advantages to deploying ML on embedded devices. The key adv
 
 🎙️ Interview of [Aurelien Lequertier](https://www.linkedin.com/in/alequertier/), Lead User Success Engineer at Edge Impulse: 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qZk2DkBRneI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Interview Aurelien from Edge Impulse](http://img.youtube.com/vi/qZk2DkBRneI/0.jpg)](http://www.youtube.com/watch?v=qZk2DkBRneI "Interview Aurelien from Edge Impulse")
 
 ### Create an account & a project
 
