@@ -14,12 +14,12 @@ In this lab, we will see three different algorithms, matching different use case
 
 1. **Continuous motion detection**: We will use this technique to detect *free-fall patterns*. It could be integrated in an assistance solution for the elderly for example.
 2. **Image classification**: It's a famous technique to classify images, if you go further with neural networks, you will probably end up doing a tutorial to recognize a cat from a dog. Here I will give you freedom to classify any type of image, feel free to make something fun.
-3. **Trigger word detection (bonus, not graded): **: "Hey Google" or "Alexa" words can trigger your smart speaker. here, we will try to recognize your own word.
+3. **Trigger word detection (bonus, not graded):**: "Hey Google" or "Alexa" words can trigger your smart speaker. Here, we will try to recognize your own word.
 
 *Disclaimer: I am a beginner in AI & Deep Learning. This field got my attention recently and I only passed the Coursera [Neural Networks and Deep Learning Specialization](https://www.coursera.org/account/accomplishments/verify/5WBR89U96WJ7) in April 2020. IoT has experienced, in recent years, a new craze boosted by AI (Artificial Intelligence), Blockchain and integration with SaaS applications. The real-time feedback of physical data, making it possible to constantly create new uses.*
  
 
-You won't need the past laboratory for this lab but here they are in case you were missing them or you want to build a complete solution, feel free to have another look:
+You won't need the past laboratories for this lab but here they are in case you were missing them or if you want to integrate your ML models in an IoT solution: 
 
 * [Embedded Programming - Lab 1](https://github.com/luisomoreau/Embedded-Programming-Lab-1)
 * [IoT Communication Protocols - Lab 1](https://github.com/luisomoreau/IoT-Communication-Protocols-Lab-1)
@@ -38,7 +38,7 @@ Where you will see:
 
 ✏️ Step X: For the graded part, take a screenshot, a picture or save your code
 
-Please, add the screenshot or your code under the /graded-assignement folder. Name your screenshot, your picture or your code folder with the step number. Example: graded-assignement/step1/screenshot1.png
+Please, add the screenshot or your code under the /graded-assignement folder. Name your parent repository of your screenshot, your picture or your code folder with the step number. Example: graded-assignement/step1/screenshot1.png
 
 
 
