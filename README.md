@@ -438,4 +438,4 @@ Step 1: [Recognize sound from audio](https://docs.edgeimpulse.com/docs/audio-cla
 
 Step 2: [Continuous audio sampling](https://docs.edgeimpulse.com/docs/continuous-audio-sampling)
 
-Before you leave, 
+Thank you and good job for finishing this lab. Do not hesitate to ping me if you have any questions!
